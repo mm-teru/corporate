@@ -247,6 +247,7 @@
         background-image: url(../image/bg01.png);
         background-repeat: no-repeat;
         background-position: center;
+        background-size: contain;
     }
 
     .main-title span {
@@ -560,10 +561,16 @@
     /*アニメーション　終了*/
     .service-image {
         display: flex;
-        width: 64.5vw;
+        width: 76vw;
         margin-top: 5vw;
         margin-left: auto;
         margin-right: auto;
+    }
+    .service-image-box {
+        width: 50vw;
+    }
+    .service-image-box img {
+        width: 100%;
     }
     .service-image-box:nth-child(1) {
         margin-right: 3vw;
@@ -601,7 +608,7 @@
         width: 120%;
         height: 160%;
         position: absolute;
-        top: -50%;
+        top: -35%;
         right: 0;
         z-index: -1;
         background: #fff;
