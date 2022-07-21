@@ -1,0 +1,1105 @@
+@charset "UTF-8";
+/*ウィンドウ幅が481px-900pxの場合に適用するCSS*/
+@media screen and (min-width:481px) and (max-width:900px)
+{
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        display: none;
+        background-color: #fff;
+    }
+    /*ハンバーガーメニュー　開始*/
+    .menu-btn {
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        height: 7.4vw;
+        width: 8vw;
+        justify-content: center;
+        align-items: center;
+        z-index: 90;
+        background-color: #0397e1;
+    }
+    .menu-btn span,
+    .menu-btn span:before,
+    .menu-btn span:after {
+        content: '';
+        display: block;
+        height: 0.2vw;
+        width: 4vw;
+        border-radius: 3px;
+        background-color: #ffffff;
+        position: absolute;
+    }
+    .menu-btn span:before {
+        bottom: 1vw;
+    }
+    .menu-btn span:after {
+        top: 1vw;
+    }
+    /*バツ印に変形*/
+    #menu-btn-check:checked ~ .menu-btn span {
+        background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+    #menu-btn-check:checked ~ .menu-btn span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    #menu-btn-check:checked ~ .menu-btn span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    #menu-btn-check {
+        display: none;
+    }
+    /*メニュー　装飾*/
+    .menu-content {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        z-index: 80;
+        background-color: #fff;
+        transition: all 0.5s;
+    }
+    .menu-content ul li a p:nth-child(1) {
+        font-size: 1.4vw;
+        margin-left: 1vw;
+        letter-spacing: 0.12em;
+        font-weight: normal;
+        color: grey;
+    }
+    .menu-content p:nth-child(2) {
+        font-size: 2vw;
+    }
+    .menu-content ul {
+        padding: 5vw 1vw 0;
+    }
+    .menu-content ul li {
+        border-bottom: solid 1px #e5e5e5;
+        list-style: none;
+        padding-bottom: 1vw;
+        padding-top: 1vw;
+    }
+    .menu-content ul li a {
+        display: block;
+        width: 100%;
+        font-size: 1.5vw;
+        box-sizing: border-box;
+        color:#000;
+        text-decoration: none;
+        padding: 1.5vw 1vw 1vw 0;
+        position: relative;
+        background: url(../image/sp_icon07.png) no-repeat right 15px center;
+        background-size: 4vw;
+    }
+    .menu-content ul li a::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-top: solid 2px #ffffff;
+        border-right: solid 2px #ffffff;
+        transform: rotate(45deg);
+        position: absolute;
+        right: 11px;
+        top: 16px;
+    }
+    .menu-content ul li a p strong {
+        color: #000;
+        font-size: 2.5vw;
+    }
+    .menu-content ul li a p {
+        margin-left: 1vw;
+    }
+    #menu-btn-check:checked ~ .menu-content {
+        top: 0;/*メニューを画面内へ*/
+    }
+    /*ハンバーガーメニュー　電話番号部分*/
+    .smart-tel {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 6vw;
+        padding-top: 2vw;
+        padding-bottom: 3vw;
+        background-color: #f4f4f4
+    }
+    .smart-tel-wrapper {
+        width: 36vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .smart-tel img {
+        width: 4vw;
+    }
+    .smart-tel span {
+        font-size: 4vw;
+        font-weight: bold;
+        color: #2da8e4;
+    }
+    .smart-tel p {
+        text-align: center;
+        font-size: 3vw;
+        font-weight: bold;
+    }
+    /*ハンバーガーメニュー　コンタクト部分*/
+    .smart-contact {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #0092db;
+        margin-top: 3vw;
+    }
+    .smart-contact a {
+        display: block;
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+        text-decoration: none;
+        position: relative;
+        background: url(../image/sp_icon08.png) no-repeat right 2vw center;
+        background-size: 6vw;
+    }
+    .smart-contact p {
+        text-align: center;
+        color: #fff;
+        font-size: 3vw;
+    }
+    .smart-contact p:nth-child(1) {
+        letter-spacing: 0.1em;
+    }
+    /*ハンバーガーメニュー　終了*/
+    .flex-box {
+        display: flex;
+    }
+    .logo-wrapper a {
+        transition: 0.5s;
+    }
+    .logo-wrapper a:hover {
+        transition: 0.5s;
+        opacity: 0.7;
+    }
+    h1 {
+        width: 28vw;
+        font-size: 1.4vw;
+        margin-left: 1vw;
+        letter-spacing: 0.12em;
+        font-weight: normal;
+        color: grey;
+    }
+
+    .logo-image {
+        margin-left: 1.5vw;
+    }
+    .logo-image img {
+        width: 19vw;
+    }
+    .nav-wrapper {
+        display: flex;
+        margin-left: auto;
+    }
+
+    nav ul {
+        display: flex;
+        list-style-type: none;
+    }
+    nav ul li {
+        display: flex;
+        border-left: 0.1vw solid #ccc;
+        border-bottom: 0.3vw solid transparent;
+    }
+    nav ul li:hover {
+        border-bottom: 0.3vw solid #0092DB;
+        color: #0092DB;
+    }
+    nav ul li:last-child {
+        border-right: 0.1vw solid #ccc;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 10vw;
+        padding-top: 1.2vw;
+        padding-left: 0.4vw;
+        padding-bottom: 1.3vw;
+        padding-right: 0.4vw;
+        margin-left: auto;
+        margin-right: auto;
+        text-decoration: none;
+        text-align: center;
+        font-size: 0.8vw;
+        color: black;
+    }
+
+    nav ul li a:hover {
+        color: #0092DB;
+    }
+
+    .eng {
+        display: block;
+        font-size: 1.2vw;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+    }
+    .subcontact-wrapper {
+        display: flex;
+    }
+    .subcontact-tel {
+        text-align: center;
+    }
+    .subcontact-tel a{
+        display: block;
+        padding-top: 1vw;
+        padding-bottom: 1.2vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .subcontact-tel a:hover {
+        border-bottom: 0.3vw solid #0092DB;
+        color: #0092DB;
+    }
+
+    .tel {
+        color: #0297e0;
+        font-size: 1.5vw;
+        font-weight: bold;
+    }
+    .tel img {
+        margin-right: 0.5vw;
+    }
+    .time {
+        font-size: 0.7vw;
+    }
+
+    .subcontact {
+        background-color: #0092DB;
+    }
+
+
+    .subcontact a {
+        display: block;
+        padding-top: 1.4vw;
+        padding-left: 1.4vw;
+        padding-right: 1.4vw;
+        padding-bottom: 1.4vw;
+        text-decoration: none;
+    }
+    .subcontact a:hover {
+        background-color: #00537a;
+    }
+    .subcontact p {
+        text-align: center;
+        color: #fff;
+        font-size: 0.8vw;
+    }
+
+    .subcontact .eng-1 {
+        font-size: 1.2vw;
+        font-weight: bold;
+    }
+    /*トップ画像*/
+    .top-background {
+        position: relative;
+        width: 100%;
+        height: 43vw;
+        margin-top: 0.4vw;
+        background-color: #00537A;
+    }
+    .top-visual {
+        position: relative;
+        overflow: hidden;
+        width: 70vw;
+        height: 40vw;
+        background-color: #00537A;
+    }
+    /*アニメーション開始*/
+    .top-visual img {
+        display: block;
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        left: 100%;
+        animation: slideAnime 15s ease infinite;
+    }
+
+    .top-visual img:nth-of-type(1) { animation-delay: 0s }
+    .top-visual img:nth-of-type(2) { animation-delay: 5s }
+    .top-visual img:nth-of-type(3) { animation-delay: 10s }
+
+    @keyframes slideAnime{
+    0% { left: 100%  }
+    3% { left: 0     }
+    30% { left: 0     }
+    33% { left: -100% }
+    100% { left: -100% }
+    }
+
+    .text-ground  { 
+        position: absolute;
+        width: 32vw;
+        height: 34vw;
+        top: 4vw;
+        left: 63vw;
+        background-color: #fff;
+    }
+
+    .top-text {
+        width: 25vw;
+        margin-top: 3.5vw;
+        margin-left: 4.5vw;
+    }
+    .top-text p {
+        font-size: 5vw;
+        color: #0297e0;
+        text-align: left;
+        font-weight: bold;
+    }
+    .top-text p:last-child {
+        font-size: 1.5vw;
+        color: black;
+        font-weight: bold;
+        line-height: 3em;
+        margin-top: 1vw;
+    }
+    .top-text .border {
+        width: 6vw;
+        height: 0.5vw;
+        margin-top: -1vw;
+        margin-left: 0.5vw;
+        background-color: #0092DB;
+    }
+    /*最初の会社紹介*/
+    main {
+        display: flex;
+        width: 100%;
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+    }   
+    
+    .main-text {
+        display: block;
+        width: 49vw;
+        height: 38vw;
+    }
+
+    .main-title span {
+        color: #00547d;
+        font-size: 0.8vw;
+        letter-spacing: 0.1em;
+        margin-bottom: 1vw;
+        font-weight: bold;
+    }
+
+    .main-text h2 {
+        font-size: 2.8vw;
+        color: #0297e0;
+        margin-top: 1.5vw;
+        margin-bottom: 1.5vw;
+        line-height: 1.45;
+        letter-spacing: 0.05em;  
+    }
+
+    .main-text p {
+        font-size: 1.3vw;
+        line-height: 2.25;
+        letter-spacing: 0.1em;
+        margin-top: 0.5vw;
+    }
+    main img {
+        width: 48vw;
+        height: 45vw;
+        margin-left: auto;
+    }
+     /*スマートフォン用　テキスト*/
+    .smart-main-text {
+        display: none;
+    }
+    /*インフォメーション*/
+
+    .information {
+        width: 100%;
+        background: #f2f2f2;
+        padding-bottom: 10vw;
+    }
+
+    .info-title {
+        position: relative;
+        margin-bottom: 3vw;
+        margin-left: 1vw;
+        
+    }
+
+    .info-border {
+        width: 4vw;
+        height: 0.5vw;
+        position: absolute;
+        top: 8vw;
+        left: 0.5vw;
+        background-color: #00537A;
+    }
+
+    h3 {
+        font-size: 5vw;
+        color: #00547d;
+        letter-spacing: 0.04em;
+        padding-top: 8.8vw;
+    }
+
+    h3 span {
+        color: #0297e0;
+    }
+
+    .info-title p {
+        font-size: 1.5vw;
+    }
+
+    .info-title p:nth-child(3) {
+        font-size: 1.5vw;
+        margin-bottom: 2vw;
+    }
+
+    .info-wrapper {
+        display: flex;
+        width: 95vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-box {
+        width: 30vw;
+        border-top: 0.2vw solid #00547d;
+    }
+
+    .info-box:nth-child(2) {
+        margin-left: 2.1vw;
+        margin-right: 2.1vw;
+    }
+
+    .info-box:nth-child(3) {
+        margin-right: 2.1vw;
+    }   
+    /*アニメーション　開始*/
+
+    .info-box figure {
+    width: 22vw;
+    height: 16vw;
+    overflow: hidden;
+    }
+
+    .info-box figure img {
+    width: 100%;
+    height: 100%;
+    transition: .4s;
+    }
+
+    .info-box a:hover figure img {
+        transform: scale(1.2);
+    }
+
+    /*アニメーション終わり*/
+    .info-box a {
+        display: block;
+        padding-bottom: 1vw;
+        text-decoration: none;
+    }
+
+    .info-time {
+        color: #999;
+        font-size: 1.5vw;
+    }
+
+    .info-box h4 {
+        font-size: 1.5vw;
+        color: #0297E0;
+        margin-top: 0.8vw;
+        margin-bottom: 0.8vw;
+    }   
+
+    .info-box p {
+        color: #0297E0;
+        font-size: 1vw;
+    }
+
+    .info-menu {
+        width: 23vw;
+        height: 6vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5vw;
+        background-color: #0092DB;
+        box-shadow: 0px 5px 15px -5px #777777;
+        transition: 0.5s;
+    }
+
+    .info-menu a {
+        width: 23vw;
+        height: 3.9vw;
+        display: block;
+        padding-top: 2.3vw;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5vw;
+        transition: 0.5s;
+    }
+
+    .info-menu a:hover {
+        background-color: #fff;
+        color: #0092DB;
+        transition: 0.5s;
+    }
+    
+     /*スマホ用　レイアウト*/
+    .smart-info {
+        display: none;
+    }
+
+    /*サービス紹介*/
+
+    .service {
+        width: 100%;
+        background: #fff;
+        padding-bottom: 10vw;
+    }
+
+    .service-title {
+        position: relative;
+        margin-left: 1vw;
+        margin-bottom: 3vw;
+    }
+
+    .service-border {
+        width: 5vw;
+        height: 0.4vw;
+        position: absolute;
+        top: 8.5vw;
+        left: 0.5vw;
+        background-color: #00537A;
+    }
+
+    .service-title p {
+        font-size: 1.5vw;
+        width: 90vw;
+    }
+    .service-title p br {
+        display: none;
+    }
+    .service-title p:nth-child(3) {
+        font-size: 1.5vw;
+        margin-bottom: 2vw;
+    }
+
+    .service-wrapper {
+        display: flex;
+        width: 95vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4vw;
+    }
+    .service-box {
+        width: 32vw;
+        height: 40vw;
+        background-color: #f8f8f8;
+        box-shadow: 0px 5px 15px -5px #777777;
+        transition: 0.5s;
+    }
+
+    .service-box:nth-child(2) {
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
+    }
+
+    .service-box a {
+        display: block;
+        height: 38vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        padding-top: 2vw;
+        margin-left: auto;
+        margin-right: auto;
+        color: #0297E0;
+        text-align: center;
+        text-decoration: none;
+        transition: 0.5s;
+    }
+
+    .service-box h5 {
+        font-size: 1.8vw;
+        height: 6vw;
+        
+    }
+    
+    .service-box p {
+        text-align: left;
+        font-size: 1vw;
+        line-height: 2;
+        margin-top: 1vw;
+    }
+
+    /*アニメーション　開始*/
+    /*アニメーション　文字と背景色変更*/
+    .service-box:hover {
+        background-color: #0297E0;
+        transition: 0.5s;
+    }
+
+    .service-box a:hover {
+        transition: .5s;
+        color: #fff;
+        transition: 0.5s;
+    }
+    /*アニメーション　画像変更*/
+    
+    .service-img {
+        position: relative;
+        width: 6vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1vw;
+    }
+    .service-img2 {
+        position: relative;
+        width: 4.5vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1vw;
+    }
+    .service-img3 {
+        position: relative;
+        width: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1vw;
+    }
+    .before-img {
+        width: 100%;
+        vertical-align: bottom;
+    }
+    .after-img {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: 0.5s;
+        vertical-align: bottom;
+    }
+    .service-box:hover .before-img {
+        opacity: 0;
+    }
+    .service-box:hover .after-img {
+        opacity: 1;
+    }
+
+    
+    /*アニメーション　終了*/
+    .service-image {
+        display: flex;
+        width: 80vw;
+        margin-top: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .service-image-box:nth-child(1) {
+        margin-right: 3vw;
+    }
+    .service-image-box a{
+        transition: 0.5s;
+    }
+    .service-image-box a:hover {
+        transition: 0.5s;
+        opacity: 0.8;
+    }
+    .service-image-box a img {
+        width: 100%;
+    }
+     .service-more {
+        color: #0297E0;
+        font-size: 16px;
+        font-weight: bold;
+        background: transparent;
+        width: 120px;
+        height: 50px;
+        text-align: center;
+        line-height: 60px;
+        border-radius: 50px;
+        position: relative;
+        z-index: 1;
+        display: block;
+        overflow: hidden;
+        transition: .3s;
+        margin-top: 2vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .service-more::before {
+        content: "MORE";
+        padding-top: 1vw;
+        width: 120%;
+        height: 160%;
+        position: absolute;
+        top: -50%;
+        right: 0;
+        z-index: -1;
+        background: #fff;
+        border-radius: 0 100% 100% 0;
+        transform: translateX(-100%);
+        transition: transform ease .3s;
+    }
+    .service-box a:hover .service-more {
+        color: #0297E0;
+    }
+    .service-box a:hover .service-more::before {
+        transform: translateX(10%);
+    }
+
+    .service-menu {
+        width: 23vw;
+        height: 6vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5vw;
+        background-color: #0092DB;
+        box-shadow: 0px 5px 15px -5px #777777;
+        transition: 0.5s;
+    }
+
+    .service-menu a {
+        width: 23vw;
+        height: 3.9vw;
+        display: block;
+        padding-top: 2.3vw;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5vw;
+        transition: 0.5s;
+    }
+
+    .service-menu a:hover {
+        background-color: #fff;
+        color: #0092DB;
+        transition: 0.5s;
+    }
+    /*アバウトページ部分*/
+    .about {
+        position: relative;
+        padding-top: 15vw;
+        background-color: #f2f2f2;
+        padding-bottom: 2vw;
+    }
+    .about-backimage {
+        width: 100%;
+        height: 32.5vw;
+    }
+    .about-backimage img {
+        width: 100%;
+    }
+    .about-text {
+        position: absolute;
+        top: 10vw;
+        right: 0;
+        width: 40vw;
+        height: 40vw;
+        background-color: #fff;
+        
+    }
+    .about-border {
+        width: 3vw;
+        height: 0.4vw;
+        background-color: #00537A;
+        margin-top: 3vw;
+        margin-left: 10.5vw;
+    }
+    .about-text p {
+        margin-left: 10vw;
+    }
+    .about-text p:nth-child(2) {
+        font-size: 5vw;
+        color: #00547d;
+        
+        letter-spacing: 0.04em;
+        font-weight: bold;
+    }
+    .about-text p:nth-child(2) span {
+        color: #0297e0;
+    }
+    .about-text p:nth-child(4) {
+        font-size: 1.5vw;
+        width: 18vw;
+        margin-top: 2vw;
+    }
+    
+    
+    .about-menu {
+        width: 16vw;
+        height: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1.5vw;
+        background-color: #0092DB;
+        box-shadow: 0px 5px 15px -5px #777777;
+        transition: 0.5s;
+    }
+
+    .about-menu a {
+        display: block;
+        width: 16vw;
+        height: 3vw;
+        padding-top: 1.4vw;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1vw;
+        transition: 0.5s;
+    }
+
+    .about-menu:hover {
+        background-color: #fff;
+        transition: 0.5s;
+    }
+
+    .about-menu a:hover {
+        color: #0092DB;
+        transition: 0.5s;
+    }
+    /*コンタクト部分*/
+
+    .contact {
+        width: 100%;
+        background-color: #f2f2f2;
+    }
+
+    .contact-title {
+        text-align: center;
+        margin-bottom: 3vw;
+    }
+
+    .contact-title p {
+        font-size: 1.5vw;
+    }
+
+    .contact-title p:nth-child(3) {
+        font-size: 1.5vw;
+        margin-top: 1vw;
+        margin-bottom: 2vw;
+    }
+
+    .contact-wrapper {
+        display: flex;
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-box {
+        width: 45vw;
+        height: 13vw;
+        background-color: #fff;
+        box-shadow: 0px 5px 15px -5px #777777;
+        margin-right: 0.2vw;
+        
+    }
+
+    .contact-box a {
+        display: block;
+        height: 9vw;
+        text-align: center;
+        text-decoration: none;
+        color: #0297E0;
+    }
+    .contact-box .contact-tel {
+        padding-top: 2.3vw;
+        padding-bottom: 1.7vw;
+    }
+
+    .tel-number {
+        font-weight: bold;
+        font-size: 2.5vw;
+    }
+
+    .tel-wrapper {
+        width: 24vw;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-box .contact-mail {
+        padding-top: 2.5vw;
+        padding-bottom: 1.5vw;
+    }
+    .contact-box .contact-mail p{
+        margin-bottom: 0.3vw;
+    }
+
+    .contact-box a p {
+        font-weight: bold;
+        font-size: 1.5vw; 
+    }
+
+    /*マウスオーバー　開始*/
+    /*背景色・文字色変更*/
+
+    .contact-box:hover {
+        transition: .5s;
+        background-color: #0297E0;
+    }
+
+    .contact-box a:hover {
+        transition: .5s;
+        color: #fff;
+    }
+    /*画像変更*/
+
+    .contact-img {
+        position: relative;
+        width: 3.5vw;
+        padding-top: 0.6vw;
+        padding-right: 0.5vw;
+        transition: .5s;
+    }
+    .before-tel {
+        width: 100%;
+        vertical-align: top;
+    }
+    .contact-img .after-tel {
+        position: absolute;
+        width: 3.5vw;
+        height: 3.3vw;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: 0.5s;
+        vertical-align: top;
+    }
+
+    .contact-box:hover .after-tel {
+        opacity: 1;
+        transition: .5s;
+    }
+    .contast-box:hover .before-tel {
+        opacity: 0;
+        transition: .5s;
+    }
+    /*二つ目*/
+    .contact-img2 {
+        position: relative;
+        width: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 0.6vw;
+        padding-bottom: 0.5vw;
+    }
+    .before-mail {
+        width: 100%;
+        vertical-align: top;
+    }
+    .contact-img2 .after-mail {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: 0.1s;
+        padding-top: 0.2vw;
+    }
+
+    .contact-box:hover .after-mail {
+        opacity: 1;
+    }
+    .contast-box:hover .before-mail {
+        opacity: 0;
+        transition: .5s;
+    }
+    .contact iframe {
+        margin-top: 10vw;
+    }
+
+    /*フッター部分*/
+
+    footer {
+        width: 100%;
+        background-color: #00537A;
+        color: #fff;
+    }
+
+    .footer-logo {
+        display: flex;
+        padding-top: 3vw;
+        margin-left: 12.7vw;
+    }
+    .footer-logo img {
+        width: 10vw;
+        height: 2.3vw;
+    }
+    .footer-logo h6 {
+        margin-left: 2vw;
+        margin-top: 0.5vw;
+        font-size: 1.5vw;
+    }
+
+    .footer-wrapper {
+        display: flex;
+        margin-top: 2.5vw;
+    }
+
+    .footer-wrapper p {
+        font-size: 0.9vw;
+    }
+    .footer-address {
+        margin-right: 2vw;
+        margin-left: 12.7vw;
+    }
+    .copyright {
+        margin-top: 4vw;
+    }
+    .copyright p:nth-child(1) {
+        text-align: center;
+    }
+    .small2 {
+        text-align: right;
+        margin-left: auto;
+        margin-right: 1vw;
+    }
+    .favicon {
+        display: flex;
+        margin-left: auto;
+        margin-top: 0.5vw;
+        margin-right: 10vw;
+    }
+    .favicon a {
+        display: flex;
+        text-decoration: none;
+        color: #fff;
+    }
+    .favicon a:hover {
+        opacity: 0.7;
+    }
+    .favicon i {
+        font-size: 1.5vw;
+        color: #fff;
+        margin-top: 0.2vw;
+    }
+
+    .favicon a p {
+        margin-left: 0.7vw;
+        font-size: 1vw;
+        
+        text-decoration: none;
+    }
+
+    .fa-twitter {
+        margin-left: 1vw;
+    }
+    
+}
+
