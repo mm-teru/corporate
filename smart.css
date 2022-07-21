@@ -1,0 +1,1069 @@
+@charset "UTF-8";
+/*ウィンドウ幅が480px以下の場合に適用するCSS*/
+@media screen and (max-width:480px)
+{
+ * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    
+    header {
+        display: none;
+        background-color: #fff;
+    }
+    /*ハンバーガーメニュー　開始*/
+    .responsive-menu {
+        overflow: hidden;
+    }
+    .menu-btn {
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        height: 14vw;
+        width: 14vw;
+        justify-content: center;
+        align-items: center;
+        z-index: 90;
+        background-color: #0397e1;
+    }
+    .menu-btn span,
+    .menu-btn span:before,
+    .menu-btn span:after {
+        content: '';
+        display: block;
+        height: 0.52vw;
+        width: 6vw;
+        border-radius: 3px;
+        background-color: #ffffff;
+        position: absolute;
+    }
+    .menu-btn span:before {
+        bottom: 2vw;
+    }
+    .menu-btn span:after {
+        top: 2vw;
+    }
+    /*バツ印に変形*/
+    #menu-btn-check:checked ~ .menu-btn span {
+        background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+    #menu-btn-check:checked ~ .menu-btn span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    #menu-btn-check:checked ~ .menu-btn span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    #menu-btn-check {
+        display: none;
+    }
+    /*メニュー　装飾*/
+    .menu-content {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        z-index: 80;
+        background-color: #fff;
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+     
+    .menu-content ul li a p:nth-child(1) {
+        font-size: 1.4vw;
+        margin-left: 1vw;
+        letter-spacing: 0.12em;
+        font-weight: normal;
+        color: grey;
+    }
+    .menu-content p:nth-child(2) {
+        font-size: 3vw;
+    }
+    .menu-content ul {
+        padding: 10vw 1vw 0;
+    }
+    .menu-content ul li {
+        border-bottom: solid 1px #e5e5e5;
+        list-style: none;
+        padding-bottom: 2vw;
+        padding-top: 2vw;
+    }
+    .menu-content ul li a {
+        display: block;
+        width: 100%;
+        font-size: 1.5vw;
+        box-sizing: border-box;
+        color:#000;
+        text-decoration: none;
+        padding: 1.5vw 1vw 1vw 0;
+        position: relative;
+        background: url(../image/sp_icon07.png) no-repeat right 2vw center;
+        background-size: 6vw;
+    }
+    .menu-content ul li a::before {
+        content: "";
+        width: 0.1vw;
+        height: 0.1vw;
+        border-top: solid 1vw #ffffff;
+        border-right: solid 1vw #ffffff;
+        transform: rotate(45deg);
+        position: absolute;
+        right: 11px;
+        top: 16px;
+    }
+    .menu-content ul li a p strong {
+        color: #000;
+        font-size: 4vw;
+    }
+    .menu-content ul li a p {
+        margin-left: 1vw;
+    }
+    #menu-btn-check:checked ~ .menu-content {
+        top: 0;/*メニューを画面内へ*/
+    }
+    /*ハンバーガーメニュー　電話番号部分*/
+    .smart-tel {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 6vw;
+        padding-top: 4vw;
+        padding-bottom: 5vw;
+        background-color: #f4f4f4
+    }
+    .smart-tel-wrapper {
+        width: 56vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .smart-tel img {
+        width: 8vw;
+    }
+    .smart-tel span {
+        font-size: 6vw;
+        font-weight: bold;
+        color: #2da8e4;
+    }
+    .smart-tel p {
+        text-align: center;
+        font-size: 3vw;
+        font-weight: bold;
+    }
+    /*ハンバーガーメニュー　コンタクト部分*/
+    .smart-contact {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #0092db;
+        margin-top: 6vw;
+    }
+    .smart-contact a {
+        display: block;
+        padding-top: 4vw;
+        padding-bottom: 5vw;
+        text-decoration: none;
+        position: relative;
+        background: url(../image/sp_icon08.png) no-repeat right 2vw center;
+        background-size: 6vw;
+    }
+    .smart-contact p {
+        text-align: center;
+        color: #fff;
+    }
+    .smart-contact p:nth-child(1) {
+        letter-spacing: 0.1em;
+    }
+    /*ハンバーガーメニュー　終了*/
+    .flex-box {
+        display: flex;
+    }
+    .logo-wrapper {
+        margin-left: 2vw;
+        margin-top: 2vw;
+    }
+    .logo-wrapper a {
+        transition: 0.5s;
+    }
+    .logo-wrapper a:hover {
+        transition: 0.5s;
+        opacity: 0.7;
+    }
+    h1 {
+        font-size: 1.4vw;
+        margin-left: 1vw;
+        letter-spacing: 0.12em;
+        font-weight: normal;
+        color: grey;
+    }
+
+    .logo-image {
+        margin-left: 1.5vw;
+    }
+    .logo-image img {
+        width: 25vw;
+    }
+    .nav-wrapper {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .nav-wrapper nav ul {
+        display: flex;
+        list-style-type: none;
+    }
+    .nav-wrapper nav ul li {
+        display: flex;
+        border-left: 0.1vw solid #ccc;
+        border-bottom: 0.3vw solid transparent;
+    }
+    .nav-wrapper nav ul li:hover {
+        border-bottom: 0.3vw solid #0092DB;
+        color: #0092DB;
+    }
+    .nav-wrapper nav ul li:last-child {
+        border-right: 0.1vw solid #ccc;
+    }
+
+    .nav-wrapper nav ul li a {
+        display: block;
+        width: 10vw;
+        padding-top: 1.2vw;
+        padding-left: 0.4vw;
+        padding-bottom: 1.3vw;
+        padding-right: 0.4vw;
+        margin-left: auto;
+        margin-right: auto;
+        text-decoration: none;
+        text-align: center;
+        font-size: 0.8vw;
+        color: black;
+    }
+
+    .nav-wrapper nav ul li a:hover {
+        color: #0092DB;
+    }
+
+    .eng {
+        display: block;
+        font-size: 1.2vw;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+    }
+    .subcontact-wrapper {
+        display: flex;
+    }
+    .subcontact-tel {
+        text-align: center;
+    }
+    .subcontact-tel a{
+        display: block;
+        padding-top: 1vw;
+        padding-bottom: 1.2vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .subcontact-tel a:hover {
+        border-bottom: 0.3vw solid #0092DB;
+        color: #0092DB;
+    }
+
+    .tel {
+        color: #0297e0;
+        font-size: 1.5vw;
+        font-weight: bold;
+    }
+    .tel img {
+        margin-right: 0.5vw;
+    }
+    .time {
+        font-size: 0.7vw;
+    }
+
+    .subcontact {
+        background-color: #0092DB;
+    }
+
+
+    .subcontact a {
+        display: block;
+        padding-top: 1.4vw;
+        padding-left: 1.4vw;
+        padding-right: 1.4vw;
+        padding-bottom: 1.4vw;
+        text-decoration: none;
+    }
+    .subcontact a:hover {
+        background-color: #00537a;
+    }
+    .subcontact p {
+        text-align: center;
+        color: #fff;
+        font-size: 0.8vw;
+    }
+
+    .subcontact .eng-1 {
+        font-size: 1.2vw;
+        font-weight: bold;
+    }
+    /*トップ画像*/
+    .top-background {
+        position: relative;
+        width: 100%;
+        height: 120vw;
+        margin-top: 1.3vw;
+        background-color: #00537A;
+    }
+    .top-visual {
+        position: relative;
+        overflow: hidden;
+        width: 80vw;
+        height: 70vw;
+        background-color: #00537A;
+    }
+    /*アニメーション開始*/
+    .top-visual img {
+        display: block;
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        left: 100%;
+        animation: slideAnime 15s ease infinite;
+    }
+
+    .top-visual img:nth-of-type(1) { animation-delay: 0s }
+    .top-visual img:nth-of-type(2) { animation-delay: 5s }
+    .top-visual img:nth-of-type(3) { animation-delay: 10s }
+
+    @keyframes slideAnime{
+    0% { left: 100%  }
+    3% { left: 0     }
+    30% { left: 0     }
+    33% { left: -100% }
+    100% { left: -100% }
+    }
+
+    .text-ground  { 
+        position: absolute;
+        width: 60vw;
+        height: 60vw;
+        bottom: 0;
+        right: 0;
+        background-color: #fff;
+    }
+
+    .top-text {
+        width: 50vw;
+        margin-top: 7vw;
+        margin-left: auto;
+        margin-right: auto; 
+    }
+    .top-text p:nth-child(1),
+    .top-text p:nth-child(2),
+    .top-text p:nth-child(3) {
+        font-size: 10vw;
+        color: #0297e0;
+        text-align: left;
+        font-weight: bold;
+        line-height: 1.3em;
+        letter-spacing: 0.05em;
+    }
+    .top-text p:last-child {
+        font-size: 3vw;
+        color: black;
+        font-weight: bold;
+        line-height: 3em;
+        margin-top: 3vw;
+    }
+    .top-text .border {
+        width: 10vw;
+        height: 0.7vw;
+        margin-top: -1vw;
+        margin-left: 0.5vw;
+        background-color: #0092DB;
+    }
+    /*最初の会社紹介*/
+    main {
+        display: block;
+        width: 90%;
+        margin-top: 10vw;
+        margin-bottom: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+    }   
+    
+    .main-text {
+        display: block;
+        margin-bottom: 5vw;
+    }
+
+    .main-title span {
+        color: #00547d;
+        font-size: 0.8vw;
+        letter-spacing: 0.1em;
+        margin-bottom: 1vw;
+        font-weight: bold;
+    }
+
+    .main-text h2 {
+        font-size: 7vw;
+        color: #0297e0;
+        margin-top: 1.5vw;
+        margin-bottom: 1.5vw;
+        line-height: 1.45;
+        letter-spacing: 0.05em;  
+    }
+
+    .main-text p {
+        font-size: 3.5vw;
+        line-height: 2;
+        letter-spacing: 0.1em;
+        margin-top: 0.5vw;
+    }
+    .main-text p:nth-child(2) {
+        display: none;
+    }
+    main img {
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*インフォメーション*/
+
+    .information {
+        width: 100%;
+        background: #f2f2f2;
+        padding-bottom: 10vw;
+    }
+
+    .info-title {
+        position: relative;
+        width: 90%;
+        margin-bottom: 3vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info-border {
+        width: 4vw;
+        height: 0.5vw;
+        position: absolute;
+        top: 8.5vw;
+        left: 0.2vw;
+        background-color: #00537A;
+    }
+
+    h3 {
+        font-size: 8vw;
+        color: #00547d;
+        letter-spacing: 0.04em;
+        padding-top: 8.8vw;
+    }
+
+    h3 span {
+        color: #0297e0;
+    }
+    .info-title p:nth-child(3) {
+        font-size: 3.5vw;
+        margin-bottom: 2vw;
+    }
+    .info-title p:nth-child(4) {
+        font-size: 3vw;
+        line-height: 2;
+    }
+    .info-wrapper {
+        display: block;
+        border-bottom: 0.2vw solid #e5e5e5;
+        background-color: #fff;
+    }
+
+    .info-box {
+        border-top: 0.2vw solid #e5e5e5;
+    }
+
+    /*アニメーション　開始*/
+
+    .info-box figure {
+        width: 60vw;
+        height: 28vw;
+        overflow: hidden;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+    }
+
+    .info-box figure img {
+    width: 100%;
+    height: 100%;
+    transition: .4s;
+    }
+
+    .info-box a:hover figure img {
+        transform: scale(1.2);
+    }
+
+    /*アニメーション終わり*/
+    .info-box a {
+        display: flex;
+        width: 95vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 1vw;
+        text-decoration: none;
+    }
+    .smart-info {
+        width: 90vw;
+        margin-left: 2vw;
+        margin-bottom: 3vw;
+    }
+    .info-time {
+        display: none;
+        color: #999;
+        font-size: 1.5vw;
+    }
+    .smart-info-time {
+        display: block;
+        color: #999;
+        font-size: 3vw;
+        margin-top: 2vw;
+        margin-bottom: 5vw;
+    } 
+    .info-box h4 {
+        display: none;
+        font-size: 1.5vw;
+        color: #0297E0;
+        margin-top: 0.8vw;
+        margin-bottom: 0.8vw;
+    }   
+    .smart-info  h7 {
+        font-size: 3.5vw;
+        color: #0297E0;
+        font-weight: bold;
+    }
+    .info-box p {
+        display: none;
+        color: #0297E0;
+        font-size: 1vw;
+    }
+
+    .info-menu {
+        width: 40vw;
+        height: 10vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5vw;
+        background-color: #0092DB;
+        box-shadow: 0px 5px 15px -5px #777777;
+        transition: 0.5s;
+    }
+
+    .info-menu a {
+        width: 40vw;
+        height: 10vw;
+        display: block;
+        padding-top: 3vw;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: 3vw;
+        transition: 0.5s;
+    }
+
+    .info-menu a:hover {
+        background-color: #fff;
+        color: #0092DB;
+        transition: 0.5s;
+    }
+
+    /*サービス紹介*/
+
+    .service {
+        width: 100%;
+        background: #fff;
+        padding-bottom: 10vw;
+    }
+
+    .service-title {
+        position: relative;
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3vw;
+    }
+
+    .service-border {
+        width: 4vw;
+        height: 0.5vw;
+        position: absolute;
+        top: 9vw;
+        left: 0.7vw;
+        background-color: #00537A;
+    }
+
+    .service-title p {
+        font-size: 1.5vw;
+        width: 90vw;
+    }
+    .service-title p br {
+        display: none;
+    }
+    .service-title p:nth-child(3) {
+        font-size: 3.5vw;
+        margin-bottom: 2vw;
+    }
+    .service-title p:nth-child(4) {
+        font-size: 3vw;
+        line-height: 2;
+    }
+    .service-wrapper {
+        display: block;
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    .service-box {
+        background-color: #f8f8f8;
+        box-shadow: 0px 5px 15px -5px #777777;
+        transition: 0.5s;
+        margin-top: 1vw;
+    }
+
+    .service-box a {
+        display: block;
+        color: #0297E0;
+        text-align: center;
+        text-decoration: none;
+        transition: 0.5s;
+        margin-top: 4vw;
+        padding-top: 1vw;
+        padding-bottom: 3vw;
+    }
+
+    .service-box h5 {
+        font-size: 5vw;
+        margin-bottom: 5vw;
+    }
+    .service-box p {
+        width: 70vw;
+        height: 32vw;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        font-size: 3vw;
+        line-height: 1.8;
+        margin-bottom: 5vw;
+    }
+    .service-box:nth-child(1) p,
+    .service-box:nth-child(3) p {
+        height: 15vw;
+    }
+    /*アニメーション　開始*/
+    /*アニメーション　文字と背景色変更*/
+    .service-box a:hover {
+        background-color: #0297E0;
+        transition: 0.5s;
+        color: #fff;
+    }
+    
+    /*アニメーション　画像変更*/
+    
+    .service-img {
+        position: relative;
+        width: 11vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2vw;
+        margin-top: 5vw;
+    }
+    .service-img2 {
+        position: relative;
+        width: 8.5vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1vw;
+        margin-top: 5vw;
+    }
+    .service-img3 {
+        position: relative;
+        width: 9vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2vw;
+        margin-top: 5vw;
+    }
+    .before-img {
+        width: 100%;
+        vertical-align: bottom;
+    }
+    .after-img {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: 0.5s;
+        vertical-align: bottom;
+    }
+    .service-box:hover .before-img {
+        opacity: 0;
+    }
+    .service-box:hover .after-img {
+        opacity: 1;
+    }
+
+    
+    /*アニメーション　終了*/
+    .service-image {
+        display: block;
+        width: 80vw;
+        margin-top: 5vw;
+         margin-left: auto;
+        margin-right: auto;
+    }
+    .service-image-box a{
+        transition: 0.5s;
+    }
+    .service-image-box a:hover {
+        transition: 0.5s;
+        opacity: 0.8;
+    }
+    .service-image-box a img {
+        width: 100%;
+    }
+    .service-more {
+        display: none;
+    }
+     .service-more {
+        color: #0297E0;
+        font-size: 15px;
+        font-weight: bold;
+        background: transparent;
+        width: 120px;
+        height: 30px;
+        text-align: center;
+        line-height: 60px;
+        border-radius: 50px;
+        position: relative;
+        z-index: 1;
+        display: block;
+        overflow: hidden;
+        transition: .3s;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .service-more::before {
+        display: none;
+    }
+    .service-more::before {
+        content: "MORE";
+        padding-top: 1vw;
+        width: 120%;
+        height: 160%;
+        position: absolute;
+        top: -50%;
+        right: 0;
+        z-index: -1;
+        background: #fff;
+        border-radius: 0 100% 100% 0;
+        transform: translateX(-100%);
+        transition: transform ease .3s;
+    }
+    .service-box a:hover .service-more {
+        color: #0297E0;
+    }
+    .service-box a:hover .service-more::before {
+        transform: translateX(10%);
+    }
+
+    .service-menu {
+        width: 40vw;
+        height: 10vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5vw;
+        background-color: #0092DB;
+        box-shadow: 0px 5px 15px -5px #777777;
+        transition: 0.5s;
+    }
+
+    .service-menu a {
+        width: 40vw;
+        height: 10vw;
+        display: block;
+        padding-top: 3vw;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: 3vw;
+        transition: 0.5s;
+    }
+
+    .service-menu a:hover {
+        background-color: #fff;
+        color: #0092DB;
+        transition: 0.5s;
+    }
+    /*アバウトページ部分*/
+    .about {
+        padding-top: 15vw;
+        background-color: #f2f2f2;
+        margin-bottom: 10vw;
+    }
+    .about-backimage {
+        width: 100%;
+        height: 32.5vw;
+    }
+    .about-backimage img {
+        width: 100%;
+    }
+    .about-text {
+        width: 100%;
+        background-color: #fff;
+        padding-top: 3vw;
+    }
+    .about-border {
+        width: 8vw;
+        height: 0.8vw;
+        background-color: #00537A;
+        margin-left: 4vw;
+    }
+    .about-text p {
+        margin-left: 5vw;
+    }
+    .about-text p:nth-child(2) {
+        font-size: 8vw;
+        color: #00547d;
+        letter-spacing: 0.04em;
+        font-weight: bold;
+    }
+    .about-text p:nth-child(2) span {
+        color: #0297e0;
+    }
+    .about-text p:nth-child(4) {
+        font-size: 3vw;
+        width: 90%;
+        margin-top: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5vw;
+    }
+    
+    
+    .about-menu {
+        width: 40vw;
+        height: 10vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1.5vw;
+        background-color: #0092DB;
+        box-shadow: 0px 5px 15px -5px #777777;
+        transition: 0.5s;
+    }
+
+    .about-menu a {
+        display: block;
+        width: 40vw;
+        height: 10vw;
+        padding-top: 3vw;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: 3vw;
+        transition: 0.5s;
+    }
+
+    .about-menu:hover {
+        background-color: #fff;
+        transition: 0.5s;
+    }
+
+    .about-menu a:hover {
+        color: #0092DB;
+        transition: 0.5s;
+    }
+    /*コンタクト部分*/
+
+    .contact {
+        background-color: #f2f2f2;
+    }
+
+    .contact-title {
+        text-align: center;
+        margin-bottom: 3vw;
+    }
+    .contact-title p:nth-child(3) {
+        width: 90%;
+        margin-left: auto;
+        margin: auto;
+        font-size: 2.9vw;
+        margin-top: 1vw;
+        margin-bottom: 2vw;
+    }
+
+    .contact-wrapper {
+        display: block;
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-box {
+        width: 80vw;
+        height: 20vw;
+        background-color: #fff;
+        box-shadow: 0px 5px 15px -5px #777777;
+        margin-top: 2vw;
+    }
+
+    .contact-box a {
+        display: block;
+        height: 9vw;
+        text-align: center;
+        text-decoration: none;
+        color: #0297E0;
+    }
+    .contact-box .contact-tel {
+        padding-top: 2.3vw;
+        padding-bottom: 1.7vw;
+    }
+
+    .tel-number {
+        font-weight: bold;
+        font-size: 5vw;
+    }
+
+    .tel-wrapper {
+        width: 50vw;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-box .contact-mail {
+        padding-top: 2.5vw;
+        padding-bottom: 1.5vw;
+    }
+    .contact-box .contact-mail p{
+        margin-bottom: 0.3vw;
+    }
+
+    .contact-box a p {
+        font-weight: bold;
+        font-size: 3vw; 
+    }
+
+    .contact-img {
+        width: 7vw;
+        padding-top: 0.6vw;
+        padding-right: 0.5vw;
+        transition: .5s;
+    }
+    .contact-img img {
+        width: 100%;
+        margin-top: 0.5vw;
+    }
+    .after-tel {
+        display: none;
+    }
+    /*二つ目*/
+    .contact-img2 {
+        width: 7vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3vw
+    }
+    .contact-img2 img {
+        width: 100%;
+    }
+    .after-mail {
+        display: none;
+    }
+    .contact iframe {
+        margin-top: 10vw;
+    }
+
+    /*フッター部分*/
+
+    footer {
+        background-color: #00537A;
+        color: #fff;
+    }
+
+    .footer-logo {
+        display: block;
+        padding-top: 3vw;
+        margin-left: 12.7vw;
+    }
+    .footer-logo img {
+        width: 30vw;
+        height: auto;
+    }
+    .footer-logo h6 {
+        margin-top: 1vw;
+        font-size: 4vw;
+    }
+
+    .footer-wrapper {
+        display: block;
+        margin-top: 2.5vw;
+    }
+
+    .footer-wrapper p {
+        font-size: 3vw;
+    }
+    .footer-address {
+        margin-right: 2vw;
+        margin-left: 12.7vw;
+    }
+    .footer-tel {
+        margin-top: 2vw;
+        margin-right: 2vw;
+        margin-left: 12.7vw;
+    }
+    .copyright {
+        margin-top: 4vw;
+    }
+    .copyright p:nth-child(1) {
+        text-align: center;
+    }
+    .small2 {
+        text-align: right;
+        margin-left: auto;
+        margin-right: 1vw;
+    }
+    .favicon {
+        display: flex;
+        margin-top: 2vw;
+    }
+    .favicon a {
+        display: flex;
+        text-decoration: none;
+        color: #fff;
+    }
+    .favicon a:hover {
+        opacity: 0.7;
+    }
+    .favicon i {
+        font-size: 5vw;
+        color: #fff;
+        margin-top: 0.2vw;
+    }
+
+    .favicon a p {
+        margin-left: 3vw;
+        font-size: 3.5vw;
+        text-decoration: none;
+    }
+
+    .fa-twitter {
+        margin-left: 4vw;
+    }
+}
